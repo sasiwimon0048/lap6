@@ -1,0 +1,45 @@
+import RPi.GPIO as GPIO
+import time
+RED = 14
+GREEN = 15
+BLUE = 18
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(RED, GPIO.OUT)
+GPIO.setup(GREEN, GPIO.OUT)
+GPIO.setup(BLUE, GPIO.OUT)
+try:
+    while True:
+        GPIO.output (RED, False)
+        GPIO.output (GREEN, False)
+        GPIO.output (BLUE, False)
+        time.sleep(1)
+        GPIO.output (RED, False)
+        GPIO.output (GREEN, False)
+        GPIO.output (BLUE, True)
+        time.sleep(1)
+        GPIO.output (RED, False)
+        GPIO.output (GREEN, True)
+        GPIO.output (BLUE, False)
+        time.sleep(1)
+        GPIO.output (RED, False)
+        GPIO.output (GREEN, True)
+        GPIO.output (BLUE, True)
+        time.sleep(1)
+        GPIO.output (RED, True)
+        GPIO.output (GREEN, False)
+        GPIO.output (BLUE, False)
+        time.sleep(1)
+        GPIO.output (RED, True)
+        GPIO.output (GREEN, False)
+        GPIO.output (BLUE, True)
+        time.sleep(1)
+        GPIO.output (RED, True)
+        GPIO.output (GREEN, True)
+        GPIO.output (BLUE, False)
+        time.sleep(1)
+        GPIO.output (RED, True)
+        GPIO.output (GREEN, True)
+        GPIO.output (BLUE, True)
+        time.sleep(1)
+except KeyboardInterrupt:
+    GPIO.cleanup()
